@@ -37,26 +37,52 @@ var glow = 5;
 var raincol = new Array("#ff0000", "#ff5500", "#ffaa00", "#ffff00", "#aaff00", "#55ff00", "#00ff00", "#00ff55", "#00ffaa", "#00ffff", "#00aaff", "#0055ff", "#0000ff", "#5500ff", "#aa00ff", "#ff00ff", "#ff00aa", "#ff0055");
 var rainbow, raintxt, raincnt = 0;
 addLoadEvent(regenbogen)
-//xd
+
+//PASTED!!!!
+
 let player = new Audio();
-player.src = "./assets/audio/background.mp3";
-player.loop = true;
+let index = 0;
+let track_list = [{
+        path: "./assets/audio/background0.mp3"
+    },
+    {
+        path: "./assets/audio/background1.mp3"
+    },
+    {
+        path: "./assets/audio/background2.mp3",
+    },
+];
 let isPlaying = false;
-function PlayPause()
-{
+
+function loadTrack(index) {
+    player.src = track_list[index].path;
+    player.load();
+    player.addEventListener("ended", nextTrack);
+    PlayPause();
+}
+
+function nextTrack() {
+    if (index < track_list.length - 1)
+        index += 1;
+    else index = 0;
+    loadTrack(index);
+    playSong();
+}
+
+function PlayPause() {
     if (!isPlaying) playSong();
     else pauseSong();
 }
 
-function playSong(){
+function playSong() {
     player.play();
     isPlaying = true;
     document.getElementById('playpausebutton').className = "fa-solid fa-pause";
 }
 
-function pauseSong(){
+function pauseSong() {
     player.pause();
-    isPlaying =false;
+    isPlaying = false;
 
     document.getElementById('playpausebutton').className = "fa-solid fa-play";
 }
