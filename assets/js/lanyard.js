@@ -73,21 +73,7 @@ async function setUsername() {
     document.getElementById('username').innerHTML = fullName;
 }
 
-async function setStatus() {
-    const response = await fetchResponse(USERID);
-
-    if (response.data.discord_status == 'offline') {
-        return;
-    }
-    var status = response.data.activities[0].state;
-    if (!status) {
-        return;
-    }
-    document.getElementById('status').innerHTML = `Status: "${status}"`;
-}
-
 async function statusInvoke() {
-    setStatus();
     setAvatarFrame();
 }
 

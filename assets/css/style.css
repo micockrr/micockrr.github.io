@@ -102,8 +102,8 @@ hr {
 }
 button {
     height: 40px;
-    background-color: #7289DA;
-    width: auto;
+    background-color: #7289da52;
+    width: 50px;
     border: none;
     color: white;
     transition: 500ms;
@@ -247,4 +247,27 @@ button a:hover {
 }
 .connection-icon {
     height: 28px;
+}
+
+.muzyka{
+    position: absolute;
+    top: 91%;
+    right: 5%;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 30px;
+    background-color: #7289da52;
+    width: 40px;
+    border: none;
+    color: white;
+    transition: 500ms;
+    border-radius: 50px;
+    margin-bottom: 90px;
+}
+
+.muzyka:hover
+{
+    transform: scale(1.2);
 }
