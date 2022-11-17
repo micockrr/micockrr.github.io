@@ -40,6 +40,7 @@ addLoadEvent(regenbogen)
 //xd
 let player = new Audio();
 player.src = "./assets/audio/background.mp3";
+player.loop = true;
 let isPlaying = false;
 function PlayPause()
 {
