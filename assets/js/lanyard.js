@@ -1,7 +1,7 @@
 API_URL = 'https://api.lanyard.rest/v1';
 USERID = '541284990281842710';
 
-// https://api.lanyard.rest/v1/users/374220001743208459
+// thanks muffina & creper
 
 async function fetchResponse(userId) {
     try {
